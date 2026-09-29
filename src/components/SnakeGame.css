@@ -1,0 +1,67 @@
+.snake-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hud {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.1rem;
+}
+
+.hud button {
+  padding: 6px 16px;
+  background: #4ade80;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.board {
+  position: relative;
+  background: #0f3460;
+  border: 2px solid #4ade80;
+  overflow: hidden;
+}
+
+.snake-head {
+  position: absolute;
+  background: #22c55e;
+  border-radius: 3px;
+}
+
+.snake-body {
+  position: absolute;
+  background: #4ade80;
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+.food {
+  position: absolute;
+  background: #f87171;
+  border-radius: 50%;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #f87171;
+  z-index: 10;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #888;
+}

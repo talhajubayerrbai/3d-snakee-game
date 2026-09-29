@@ -1,0 +1,69 @@
+{
+  "edges": [
+    {
+      "from": "snake_game",
+      "id": "snake_game-s3_bucket-0",
+      "kind": "uses",
+      "props": {},
+      "to": "s3_bucket"
+    },
+    {
+      "from": "snake_game",
+      "id": "snake_game-cloudfront-0",
+      "kind": "uses",
+      "props": {},
+      "to": "cloudfront"
+    }
+  ],
+  "groups": [
+    {
+      "id": "dev_env",
+      "kind": "environment",
+      "name": "dev"
+    }
+  ],
+  "nodes": [
+    {
+      "group": "dev_env",
+      "id": "snake_game",
+      "name": "snake-game",
+      "props": {
+        "notes": "React/Vite TypeScript Snake game",
+        "region": "us-east-1"
+      },
+      "type": "service.static"
+    },
+    {
+      "group": "dev_env",
+      "id": "s3_bucket",
+      "name": "S3 Origin Bucket",
+      "props": {
+        "region": "us-east-1"
+      },
+      "type": "resource.bucket"
+    },
+    {
+      "group": "dev_env",
+      "id": "cloudfront",
+      "name": "CloudFront Distribution",
+      "props": {
+        "notes": "CDN in front of S3 bucket",
+        "region": "us-east-1",
+        "uri": "https://pending.cloudfront.net"
+      },
+      "type": "resource.other"
+    },
+    {
+      "group": null,
+      "id": "users",
+      "name": "Players",
+      "props": {},
+      "type": "external.user"
+    }
+  ],
+  "scope": {
+    "id": "svc_01a0eec03ce4e02b31a4a00e6fca97b3",
+    "kind": "service"
+  },
+  "version": 1
+}
